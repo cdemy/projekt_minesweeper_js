@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Minesweeper</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="header">
+				<h1>Bfz-Minesweeper</h1>
+			</div>
+			<div id="optionen">
+				<form id="optionen_form">
+					<label for="breite">Breite</label>
+					<input id="optionen_breite" name="breite" type="text" value="9" />
+					<label for="hoehe">Höhe</label>
+					<input id="optionen_hoehe" name="hoehe" type="text" value="9" />
+					<label for="minen">Höhe</label>
+					<input id="optionen_minen" name="minen" type="text" value="18" />
+					<button type="button" onclick="startNewGame()">Neues Spiel</button>
+				</form>
+			</div>
+			<div id="spielfeld"></div>
+			<div id="tools"></div>
+		</div>
+	</body>
+	<script language="javascript" type="text/javascript" src="class_game.js"></script>
+	<script language="javascript" type="text/javascript" src="js.js"></script>
+	<script language="javascript" type="text/javascript">
+		console.log("Start");
+		//var game = new Game(5,5,0);
+		var game;
+
+		function startNewGame() {
+			var breite = document.getElementById("optionen_breite").value;
+			var hoehe = document.getElementById("optionen_hoehe").value;
+			var minen = document.getElementById("optionen_minen").value;
+			//TODO: Validation
+			console.log("Neues Spiel starten mit BxH: " + breite + "x" + hoehe);
+			game = new Game(breite, hoehe, minen);
+			updateSpielfeld();
+		}
+
+		function clickFeld(x,y) {
+			game.clickFeld(x,y);
+			updateSpielfeld();
+		}
+
+		function updateSpielfeld() {
+			document.getElementById('spielfeld').innerHTML = game.getHTML();
+		}
+	</script>
+</html>

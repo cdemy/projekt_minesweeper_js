@@ -1,0 +1,59 @@
+#header {
+	padding: 1em;
+	text-align: center;
+	background: darkblue;
+	color: white;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+#header h1 {
+	margin: 0;
+	padding: 0;
+}
+
+#optionen {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+#spielfeld {
+  margin: 20px auto;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+#spielfeld_inner {
+  display: grid;
+  border-right: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+}
+
+#spielfeld_inner div {
+  height: 30px;
+  width: 30px;
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#spielfeld_inner div.closed {
+  background: #ccc;
+}
+
+#tools {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+#wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+body {
+	margin: 0;
+}
+
